@@ -1,3 +1,3 @@
 # TrackML 100<sup>th</sup> place
 
-Solution ranked #100 in the TrackML competition on Kaggle
+This repository contains the solution that achieved 100<sup>th</sup> place in private leaderboard of the [TrackML competition on Kaggle](https://www.kaggle.com/c/trackml-particle-identification).
