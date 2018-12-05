@@ -10,4 +10,4 @@ As [David Rousseau](https://www.kaggle.com/c/trackml-particle-identification/dis
 
 ![frame_02.png](https://raw.githubusercontent.com/diogoff/trackml-100/master/frames/frame_02.png)
 
-Well, here is the code. Let's have a look at it:
+Well, let's have a look at the code:
