@@ -37,6 +37,6 @@ Apparently, the answer to this question is no, since this approach was ranked #1
 
 I spent my whole time in the competition trying to come up with a feasible computational approach to this problem.
 
-_Disclaimer:_ I never intended to compete based on such naïve approach. This was just something that I would use as an initial baseline to compare with the performance of other algorithms that I would subsequently develop. However, as it often happens in Kaggle competitions, the first idea that comes to mind is the one you will end up with.
+_Disclaimer:_ I never intended to compete based on such naïve approach. This was just something that I would use as an initial baseline to compare with the performance of other algorithms that I would subsequently develop. However, as it often happens in Kaggle, the first idea that comes to mind is the one you will end up with.
 
 
