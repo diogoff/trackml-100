@@ -35,7 +35,7 @@ However, in this competition I tried to use a more general approach. Regardless 
 
 Apparently, the answer to this question is _yes_, but the results are not that good. This seems to indicate that the training set does not include all the tracks that may occur during a test experiment.
 
-However, the problem of finding the training particles that best fit a set of test hits is an interesting computational problem by itself. I spent my whole time in the competition trying to come up with a feasible computational approach to this problem.
+However, the problem of finding the training particles that best fit the test hits is an interesting computational problem by itself. I spent my whole time in the competition trying to come up with a feasible computational approach to this problem.
 
 _Disclaimer:_ I never intended to compete based on such naïve approach. This was just something that I planned to use as a baseline to compare with other approaches that I would subsequently develop. However, as it often happens in Kaggle, the first idea that comes to mind is the one you will end up with.
 
