@@ -206,3 +206,5 @@ Since test events are processed independently, there is a final step to merge al
 As a result of this step, we will have a `tracks.csv` file of about 206.1 MB. This is the file that can be submitted to Kaggle.
 
 ## Fun facts
+
+_"When you're a hammer, everything looks like a nail."_
