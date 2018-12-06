@@ -97,13 +97,12 @@ Now comes the first of several operations that are central to this approach:
 
 * For each particle, we also keep the sequence of _weights_ that correspond to each hit (see the dataset description for a definition of _weight_).
 
-Now comes a second operation that is performed on top of the previous one:
+A second _group by_ operation is performed on top of the previous one:
 
-* For each sequence of _detector ids_, we group all the particles that have traveled across that sequence of detector ids. The particle (hit) positions will be stored in a 2D array where each row represents a different particle. Each row contains the list of hit positions as the particle goes through that sequence of detectors.
+* For each sequence of _detector ids_, we group all the particles that have traveled across that sequence of detectors. The particle (hit) positions will be stored in a 2D array where each row represents a different particle, containing the list of hit positions as the particle goes through that sequence of detectors.
 
 * As before, we keep the _weights_ that correspond to each hit.
 
-We are not going to keep multiple particles for each detector sequence.
 
 
 
