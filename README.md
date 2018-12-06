@@ -57,7 +57,7 @@ All particle ids within an event are renumbered sequentially, starting from 1.
 
 A _detector id_ is built by concatenating volume id, layer id and module id for each hit.
 
-The hits for each (training) event are sorted by particle id, and then by the absolute value of _z_.
+The hits for each (training) event are sorted by particle id and, within each particle id, the hits are sorted by absolute value of _z_.
 
 
 
