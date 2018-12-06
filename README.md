@@ -39,11 +39,11 @@ However, the problem of finding the training particles that best fit the test hi
 
 _Disclaimer:_ I never intended to compete based on such naïve approach. This was just something that I planned to use as a baseline to compare with other approaches that I would subsequently develop. However, as it often happens in Kaggle, the first idea that comes to mind is the one you will end up with.
 
-## Could this approach be computationally feasible?
+### Could this ever be computationally feasible?
 
 Searching for the training particles that best fit the test hits leads to a combinatorial explosion if the number of training particles and the number of test hits are both large.
 
-* First, to find the best test hits for just a single training particle involves computing the distances between all test hits and the particle trajectory. This seems doable until one realizes that each test event has on the order of 10<sup>5</sup> test hits. If a training particle has on the order of 10 hits, there are on the order of 10<sup>6</sup> three-dimensional distances to compute.
+* First, to find the best test hits for just a single training particle involves computing the distances between all test hits and the particle trajectory. If a test event has on the order of 10<sup>5</sup> test hits, and if a training particle has on the order of 10 hits, there are on the order of 10<sup>6</sup> three-dimensional distances to compute.
 
 * Now consider that there are on the order of 10<sup>8</sup> particles in the training set, as is the case in this competition. Suddenly, there are 10<sup>14</sup> three-dimensional distances to compute.
 
@@ -51,25 +51,27 @@ Searching for the training particles that best fit the test hits leads to a comb
 
 The problem seems unapproachable in this way, unless...
 
-## Taking advantage of the detectors
+### Taking advantage of the detectors
 
-We take into account the discretization of space that is offered to us through the use of detectors (volume ids, layer ids, module ids). See my [kernel](https://www.kaggle.com/diogoff/visualizing-the-detectors) for a visualization of these detectors.
+We take into account the discretization of space that is offered to us by the use of detectors (volume ids, layer ids, module ids). See my [kernel](https://www.kaggle.com/diogoff/visualizing-the-detectors) for a visualization of these detectors.
 
 We assume that when a training particle goes across a detector, we only need to consider the test hits on the same detector, and forget about every other test hit in other detectors. This drastically reduces the number of distances to be computed.
 
 In other words, if a training particle goes through a sequence of detectors, then the relevant test hits are those that reside on the same sequence of detectors.
 
-We call this sequence of detectors a _route_. Several particles may follow the same route (i.e. the same sequence of detectors), so the number of routes is less than the number of particles.
+### Routes instead of particles
+
+We call each sequence of detectors a _route_. Several particles may follow the same route (i.e. the same sequence of detectors), so the number of routes is less than the number of particles.
 
 Now, in the figure above, we see that particles are scattered more or less radially (and helically) from the collision point. This means that only certain routes (i.e. the ones that comply with such physical behavior) are plausible.
 
 If the training dataset is sufficiently rich to provide us with all (or most of) the plausible routes, then it would be reasonable to expect that the test hits come from particles that also comply with those routes.
 
-For each route, we pick the test hits that best fit that route. Only test hits in the same sequence of detectors are considered. We give a score to how good each route can be fitted by test hits.
+For each route, we pick the test hits that best fit that route. Only test hits in the same sequence of detectors as the route are considered. We give a score to how good each route can be fitted by such test hits.
 
-After having computed the score for all routes, we sort routes by score, with the best score first.
+After having computed the score for all routes, we sort routes by score, with the best score/route first.
 
-We then assign test hits to routes on a first-come, first-served basis. The first routes to come (which are the ones with best score) can pick the test hits that best suit them. The remaining routes will have to pick test hits from the leftovers.
+We then assign test hits to routes on a first-come, first-served basis. The first routes (which are the ones with best score) can pick the test hits that best suit them. The remaining routes will have to pick test hits from the leftovers.
 
 ## The solution in 3 steps
 
