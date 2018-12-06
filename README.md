@@ -20,7 +20,7 @@ So, let's have a look at the code.
 
 * and each particle contained on the order of 10 hits (hit ids).
 
-From the numbers above, we have about (10<sup>4</sup> events) * (10<sup>4</sup> particles per event) = 10<sup>8</sup> training examples (tracks).
+From the numbers above, we have a total of about (10<sup>4</sup> events) * (10<sup>4</sup> particles per event) = 10<sup>8</sup> particles.
 
 
 
