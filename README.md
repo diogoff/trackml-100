@@ -125,11 +125,11 @@ Nothing special. Only the command that runs `routes.py` on a [PBS](https://www.p
 
 The core of this step is `tracks.py`. This script receives a (test) event id and reads the corresponding hits file (`event*-hits.csv`).
 
-In a similar way to `particles.py`, it builds a _detector id_ by concatenating the volume id, layer id and module id for each hit.
+* In a similar way to `particles.py`, it builds a _detector id_ by concatenating the volume id, layer id and module id for each hit.
 
-Also in a similar way to `particles.py`, the x,y,z position of each hit is normalized by the distance to the origin.
+* Also in a similar way to `particles.py`, the x,y,z position of each hit is normalized by the distance to the origin.
 
-In a similar way to `routes.py`, the x,y,z position of each hit is brought into a new column named _position_.
+* In a similar way to `routes.py`, the x,y,z position of each hit is brought into a new column named _position_.
 
 Hits are grouped by _detector id_. For each detector id, we have a list of hit ids, and another list with their corresponding positions.
 
