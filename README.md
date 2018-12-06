@@ -57,7 +57,7 @@ Random hits are discarded (those with particle id equal to zero).
 
 All particle ids within an event are renumbered sequentially, starting from 1.
 
-A _detector id_ is built by concatenating volume id, layer id and module id for each hit.
+A _detector id_ is built by concatenating the volume id, layer id and module id for each hit.
 
 The hits for each (training) event are sorted by particle id and, for each particle id, the hits are sorted by absolute value of _z_.
 
