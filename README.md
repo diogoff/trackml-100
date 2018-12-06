@@ -31,4 +31,6 @@ We could try to create a model that reproduces this particular experimental setu
 
 However, in this competition I tried to use a more general approach. Regardless of the particular experimental setup, I tried to answer the following question:
 
-* *Given a large amount of training data (in the form of particle trajectories)*
+* *Given a large amount of training particles, is it possible to do track reconstruction from test hits by finding which training particles best fit the test hits?*
+
+
