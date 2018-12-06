@@ -39,6 +39,8 @@ However, the problem of finding the training particle that best fits a set of te
 
 _Disclaimer:_ I never intended to compete based on such naïve approach. This was just something that I would use as a baseline to compare with other algorithms that I would subsequently develop. However, as it often happens in Kaggle, the first idea that comes to mind is the one you will end up with.
 
+## Explicar aqui o que torna a abordagem computacionalmente possível
+
 ## The solution in 3 steps
 
 1. The first step is _particles_: it comprises `qsub_particles.py`, `particles.py` and `merge_particles.py`.
