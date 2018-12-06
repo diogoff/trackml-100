@@ -77,9 +77,11 @@ In case the execution is interrupted or some workers fail, `qsub_particles.py` w
 
 Since events are processed independently by _n_ workers, there is a final step to merge all events (i.e. the output `event*-particles.csv` files) into a single CSV file (which will be called `particles.csv`).
 
-`particles.csv` will have about 48.0 GB in size.
+As a result of this first step, we will have a `particles.csv` file with about 48.0 GB.
 
 ## The second step: _routes_
+
+The core of this step is `routes.py`. 
 
 ## The third step: _tracks_
 
