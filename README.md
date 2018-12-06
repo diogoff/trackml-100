@@ -123,7 +123,9 @@ Nothing special. Only the command that runs `routes.py` on a [PBS](https://www.p
 
 ## The third step: _tracks_
 
-The core of this step is `tracks.py`.
+The core of this step is `tracks.py`. This script receives a (test) event id and reads the corresponding hits file (`event*-hits.csv`).
+
+In a similar way to `particles.py`, it builds a _detector id_ by concatenating the volume id, layer id and module id for each hit.
 
 #### What is `qsub_tracks.py`?
 
