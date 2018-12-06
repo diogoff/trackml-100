@@ -73,6 +73,12 @@ Each worker runs `particles.py` with the event ids that have been assigned to it
 
 In case the execution is interrupted or some workers fail, `qsub_particles.py` will check which event ids are missing processing and will again launch _n_ workers to handle those missing events.
 
+### What is `merge_particles.py`?
+
+Since events are processed independently by _n_ workers, there is a final step to merge all events (i.e. the output `event*-particles.csv` files) into a single CSV file (which will be called `particles.csv`).
+
+`particles.csv` will have about 48.0 GB in size.
+
 ## The second step: _routes_
 
 ## The third step: _tracks_
