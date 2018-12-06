@@ -147,7 +147,7 @@ Hits are grouped by _detector id_. For each detector id, we have a list of hit i
 
 The (test) events are processed in parallel. Each (test) event id is processed by a separate worker.
 
-In case the execution is interrupted or some workers fail, `qsub_tracks.py` will check which event ids are missing and will again launch workers to handle those missing events.
+In case the execution is interrupted or some workers fail, `qsub_tracks.py` will check which event ids are missing and will launch workers to handle those missing events.
 
 #### What is `merge_tracks.py`?
 
