@@ -103,7 +103,7 @@ A second aggregating operation is performed on top of the previous one:
 
 * As before, we keep the _weights_ that correspond to each hit.
 
-We are _not_ going to keep multiple particles for each sequence of detectors. Instead, our goal is to keep only the "mean trajectory" of the particles that have traveled across the same sequence of detectors.
+Now, we are _not_ going to keep multiple particles for each sequence of detectors. Instead, our goal is to keep only the "mean trajectory" of the particles that have traveled across the same sequence of detectors.
 
 For this purpose:
 
@@ -115,7 +115,7 @@ For this purpose:
 
 The results are sorted by _count_ in descending order, so that in the next step we consider first the sequences of detectors (i.e. the _routes_) that have been traveled by the largest number of particles.
 
-As a result of this first step, we will have a `routes.csv` file with about 48.0 GB.
+As a result of this first step, we will have a `routes.csv` file with about 23.5 GB.
 
 #### What is `qsub_routes.py`?
 
