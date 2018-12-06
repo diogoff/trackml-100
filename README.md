@@ -121,7 +121,7 @@ As a result of this first step, we will have a `routes.csv` file of about 23.5 G
 
 ### What is `qsub_routes.py`?
 
-Nothing special. Only the command that runs `routes.py` on a [PBS](https://www.pbspro.org/) cluster.
+Nothing special. Only the command that runs `routes.py` as a single worker on a [PBS](https://www.pbspro.org/) cluster.
 
 ## The third step: _tracks_
 
