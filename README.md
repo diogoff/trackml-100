@@ -59,7 +59,7 @@ A _detector id_ is built by concatenating volume id, layer id and module id for 
 
 The hits for each (training) event are sorted by particle id and, for each particle id, the hits are sorted by absolute value of _z_.
 
-
+The _x,y,z_ position of each hit is normalized by the distance to the origin.
 
 ### The second step: _routes_
 
