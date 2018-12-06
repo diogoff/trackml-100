@@ -89,19 +89,32 @@ It reads the output file from the first step (`particles.csv`) into memory (yes,
 
 The x,y,z position of each hit is brought into a new column named _position_.
 
-Now comes the first of several operations that are central to this approach:
+Now comes the first of several aggregating operations that are central to this approach:
 
-* For each particle, we create a sequence of _detector ids_ that the particle goes through (see above for the definition of _detector id_).
+* For each particle id, we create a sequence of _detector ids_ that the particle goes through (see above for the definition of _detector id_).
 
-* For each particle, we create a sequence of _positions_ that the particle goes through (based on the new _position_ column that we just defined).
+* For each particle id, we create a sequence of _positions_ that the particle goes through (based on the new _position_ column that we just defined).
 
-* For each particle, we also keep the sequence of _weights_ that correspond to each hit (see the dataset description for a definition of _weight_).
+* For each particle id, we also keep the sequence of _weights_ that correspond to the particle hits (see the dataset description for a definition of _weight_).
 
-A second _group by_ operation is performed on top of the previous one:
+A second aggregating operation is performed on top of the previous one:
 
-* For each sequence of _detector ids_, we group all the particles that have traveled across that sequence of detectors. The particle (hit) positions will be stored in a 2D array where each row represents a different particle, containing the list of hit positions as the particle goes through that sequence of detectors.
+* For each sequence of _detector ids_, we group all the particles that have traveled across that sequence of detectors. The particle (hit) positions will be stored in a 2D array where each row represents a different particle. Specifically, each row contains the list of hit positions as the particle goes through that sequence of detectors.
 
 * As before, we keep the _weights_ that correspond to each hit.
+
+We are _not_ going to keep multiple particles for each sequence of detectors. Instead, our goal is to keep only the "mean trajectory" of the particles that have traveled across the same sequence of detectors.
+
+For this purpose:
+
+* We keep the _count_ of particles that have traveled across each sequence of detectors.
+
+* We keep the mean _position_ of the particle hits at each detector, along the sequence of detectors.
+
+* We keep the mean _weight_ of the particle hits at each detector, along the sequence of detectors.
+
+
+
 
 
 
