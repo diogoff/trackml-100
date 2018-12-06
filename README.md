@@ -65,7 +65,7 @@ The _x,y,z_ position of each hit is normalized by the distance to the origin.
 
 The end result - in the form of a list of hits with event id, particle id, detector id, position x,y,z and weight - is saved to a CSV file (`event*-particles.csv`).
 
-#### What is `qsub_particles.py`?
+### What is `qsub_particles.py`?
 
 `qsub_particles.py` is a script to distribute the execution `particles.py` on a [PBS](https://www.pbspro.org/) cluster.
 
@@ -75,7 +75,7 @@ Each worker runs `particles.py` with the event ids that have been assigned to it
 
 In case the execution is interrupted or some workers fail, `qsub_particles.py` will check which event ids are missing processing and will again launch _n_ workers to handle those missing events.
 
-#### What is `merge_particles.py`?
+### What is `merge_particles.py`?
 
 Since events are processed independently by _n_ workers, there is a final step to merge all processed events (i.e. the output files `event*-particles.csv`) into a single CSV file (which will be called `particles.csv`).
 
@@ -117,7 +117,7 @@ The results are sorted by _count_ in descending order, so that in the next step 
 
 As a result of this first step, we will have a `routes.csv` file with about 23.5 GB.
 
-#### What is `qsub_routes.py`?
+### What is `qsub_routes.py`?
 
 Nothing special. Only the command that runs `routes.py` on a [PBS](https://www.pbspro.org/) cluster.
 
@@ -141,7 +141,7 @@ Hits are grouped by _detector id_. For each detector id, we have a list of hit i
 
 
 
-#### What is `qsub_tracks.py`?
+### What is `qsub_tracks.py`?
 
 `qsub_tracks.py` is a script to distribute the execution `tracks.py` on a [PBS](https://www.pbspro.org/) cluster.
 
@@ -149,7 +149,7 @@ The (test) events are processed in parallel. Each (test) event id is processed b
 
 In case the execution is interrupted or some workers fail, `qsub_tracks.py` will check which event ids are missing and will launch workers to handle those missing events.
 
-#### What is `merge_tracks.py`?
+### What is `merge_tracks.py`?
 
 Since events are processed independently, there is a final step to merge all processed events (i.e. the output files `event*-tracks.csv`) into a single CSV file (which will be called `tracks.csv`).
 
