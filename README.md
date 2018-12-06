@@ -49,7 +49,7 @@ _Disclaimer:_ I never intended to compete based on such naïve approach. This wa
 
 ### The first step: _particles_
 
-Hello.
+The core of this step is `particles.py`. For a given event id (or set of event ids), this script will read and join the hits file (`event*-hits.csv`) and the truth file (`event*-truth.csv`) for that event id.
 
 ### The second step: _routes_
 
