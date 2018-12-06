@@ -75,7 +75,7 @@ In case the execution is interrupted or some workers fail, `qsub_particles.py` w
 
 #### What is `merge_particles.py`?
 
-Since events are processed independently by _n_ workers, there is a final step to merge all events (i.e. the output `event*-particles.csv` files) into a single CSV file (which will be called `particles.csv`).
+Since events are processed independently by _n_ workers, there is a final step to merge all processed events (i.e. the output files `event*-particles.csv`) into a single CSV file (which will be called `particles.csv`).
 
 As a result of this first step, we will have a `particles.csv` file with about 48.0 GB.
 
