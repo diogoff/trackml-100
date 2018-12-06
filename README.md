@@ -113,6 +113,8 @@ For this purpose:
 
 * We keep the mean _weight_ of the particle hits at each detector, along the sequence of detectors.
 
+Such "mean trajectory" (defined by the mean position of particle hits at each detector along a sequence of detectors) is called a _route_.
+
 The results are sorted by _count_ in descending order, so that in the next step we consider first the sequences of detectors (i.e. the _routes_) that have been traveled by the largest number of particles.
 
 As a result of this first step, we will have a `routes.csv` file of about 23.5 GB.
