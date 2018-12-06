@@ -14,13 +14,13 @@ So, let's have a look at the code.
 
 ## Main idea
 
-* The training data for this competition contains on the order of 10<sup>4</sup> events (event ids).
+* The training set for this competition contains on the order of 10<sup>4</sup> events (event ids).
 
 * Each event contains on the order of 10<sup>4</sup> particles (particle ids).
 
 * And each particle contains on the order of 10 hits (hit ids).
 
-From the numbers above, we have a total of about (10<sup>4</sup> events) * (10<sup>4</sup> particles per event) = 10<sup>8</sup> particles.
+From the numbers above, we have a total of about (10<sup>4</sup> events) * (10<sup>4</sup> particles per event) = 10<sup>8</sup> training particles.
 
 <p align="center"><img src="https://raw.githubusercontent.com/diogoff/trackml-100/master/images/trackml.png"></p>
 <p align="center">(Source: <a href="https://sites.google.com/site/trackmlparticle/">https://sites.google.com/site/trackmlparticle/</a>)</p>
