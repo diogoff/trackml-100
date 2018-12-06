@@ -95,7 +95,7 @@ The hits for each training event are sorted by particle id and, for each particl
 
 The _x,y,z_ position of each hit is normalized by the distance to the origin.
 
-The end result - in the form of a list of hits with event id, particle id, detector id, position, and weight - is saved to a CSV file (`event*-particles.csv`).
+The end result - in the form of a list of hits with event id, particle id, detector id, position x,y,z and weight - is saved to a CSV file (`event*-particles.csv`).
 
 ### What is `qsub_particles.py`?
 
@@ -117,11 +117,11 @@ As a result of this step, we will have a `particles.csv` file of about 48.0 GB.
 
 The core of this step is `routes.py`.
 
-It reads the output file from the first step (`particles.csv`) into memory (yes, it reads 48 GB into RAM; I tried using [Dask](https://dask.org/) to avoid this, but at the time of this competition Dask did not support the aggregations that will be computed next).
+It reads the output file from the first step (`particles.csv`) into memory. (Yes, it reads 48 GB into RAM. I tried using [Dask](https://dask.org/) to avoid this, but at the time of this competition Dask did not support the aggregations that will be computed next.)
 
 The x,y,z position of each hit is brought into a new column named _position_.
 
-Now comes the first of several aggregating operations that are central to this approach:
+The hits are grouped by particle id, and the following aggregations are performed:
 
 * For each particle id, we create a sequence of _detector ids_ that the particle goes through (see above for the definition of _detector id_).
 
@@ -129,21 +129,21 @@ Now comes the first of several aggregating operations that are central to this a
 
 * For each particle id, we also keep the sequence of _weights_ that correspond to the particle hits (see the dataset description for a definition of _weight_).
 
-A second aggregating operation is performed on top of the previous one:
+Next is a group by sequence of detector ids, with the following aggregations being performed:
 
-* For each sequence of _detector ids_, we group all the particles that have traveled across that sequence of detectors. The particle (hit) positions will be stored in a 2D array where each row represents a different particle. Specifically, each row contains the list of hit positions as the particle goes through that sequence of detectors.
+* For each sequence of _detector ids_, we group all the particles that have traveled across that sequence of detectors. The hit positions for those particles will be stored in a 2D array where each row represents a different particle. Specifically, each row contains the list of hit positions as the particle goes through the sequence of detectors.
 
-* As before, we keep the _weights_ that correspond to each hit.
+* As before, we keep the _weights_ that correspond to each hit. These are also now stored in a 2D array, where each row contains the weights for a different particle. Specifically, each row contains the weights for the particle hits, as the particle goes through the sequence of detectors.
 
 Now, we are _not_ going to keep multiple particles for each sequence of detectors. Instead, our goal is to keep only the "mean trajectory" of the particles that have traveled across the same sequence of detectors.
 
 For this purpose:
 
-* We keep the _count_ of particles that have traveled across the same sequence of detectors.
+* We calculate the _count_ of particles that have traveled across the same sequence of detectors.
 
-* We keep the mean _position_ of the particle hits at each detector, along the sequence of detectors.
+* We calculate the mean _position_ of the particle hits at each detector, along the sequence of detectors.
 
-* We keep the mean _weight_ of the particle hits at each detector, along the sequence of detectors.
+* We calculate the mean _weight_ of the particle hits at each detector, along the sequence of detectors.
 
 Such "mean trajectory" (defined by the mean position of particle hits at each detector along a sequence of detectors) is called a _route_.
 
