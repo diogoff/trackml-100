@@ -31,13 +31,13 @@ We could try to create a model that reproduces this particular experimental setu
 
 However, in this competition I tried to use a more general approach. Regardless of the particular experimental setup, I tried to answer the following question:
 
-* *Given a large amount of training particles, is it possible to do track reconstruction from test hits by finding which training particles best fit the test hits?*
+* *Given a large amount of training particles, is it possible to do track reconstruction from test hits by finding the training particles that best fit the test hits?*
 
-Apparently, the answer to this question is _yes_, but there are way better approaches to track reconstruction. In other words, the training set does not seem to include all the tracks that may occur in a test experiment.
+Apparently, the answer to this question is _yes_, but there are way better approaches to track reconstruction. In other words, the training set does not seem to be representative of all the tracks that may occur in a test experiment.
 
 However, the problem of finding the training particle that best fits a set of test hits is an interesting computational problem _per se_. I spent my whole time in the competition trying to come up with a feasible computational approach to this problem.
 
-_Disclaimer:_ I never intended to compete based on such naïve approach. This was just something that I would use as a baseline to compare with other algorithms that I would subsequently develop. However, as it often happens in Kaggle, the first idea that comes to mind is the one you will end up with.
+_Disclaimer:_ I never intended to compete based on such naïve approach. This was just something that I planned to use as a baseline to compare with other approaches that I would subsequently develop. However, as it often happens in Kaggle, the first idea that comes to mind is the one you will end up with.
 
 ## TODO: Explicar aqui o que torna a abordagem computacionalmente possível
 
