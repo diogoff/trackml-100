@@ -131,9 +131,23 @@ Also in a similar way to `particles.py`, the x,y,z position of each hit is norma
 
 In a similar way to `routes.py`, the x,y,z position of each hit is brought into a new column named _position_.
 
+Hits are grouped by _detector id_. For each detector id, we have a list of hit ids, and another list with their corresponding positions.
+
+`tracks.py` reads `routes.csv` that was created in the previous step.
+
+
+
+
+
+
+
 #### What is `qsub_tracks.py`?
 
-...
+`qsub_tracks.py` is a script to distribute the execution `tracks.py` on a [PBS](https://www.pbspro.org/) cluster.
+
+The (test) events are processed in parallel. Each (test) event id is processed by a separate worker.
+
+In case the execution is interrupted or some workers fail, `qsub_tracks.py` will check which event ids are missing and will again launch workers to handle those missing events.
 
 #### What is `merge_tracks.py`?
 
