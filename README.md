@@ -139,6 +139,10 @@ Hits are grouped by _detector id_. For each detector id, we have a list of hit i
 
 Since routes have been sorted in descending order of particle count, when we get to unique, one-of-a-kind routes that have been traveled by a single particle, we simply discard those routes and stop reading `routes.csv`. (We take these as untrustworthy, possibly random routes that are not worth considering. Anyway, by this point most hits should have been taken up by more trustworthy routes.)
 
+Also, there is no point in cosidering routes whose weights are all zero, so we skip these routes as well.
+
+
+
 
 
 
