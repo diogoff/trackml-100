@@ -115,6 +115,8 @@ For this purpose:
 
 The results are sorted by _count_ in descending order, so that in the next step we consider first the sequences of detectors (i.e. the _routes_) that have been traveled by the largest number of particles.
 
+As a result of this first step, we will have a `routes.csv` file with about 48.0 GB.
+
 #### What is `qsub_routes.py`?
 
 Nothing special. Only the command that runs `routes.py` on a [PBS](https://www.pbspro.org/) cluster.
