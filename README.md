@@ -97,7 +97,11 @@ Now comes the first of two _group by_ operations that are central to this approa
 
 Now comes the second _group by_ operation that is central to this approach:
 
-* For each sequence of _detector ids_, 
+* For each sequence of _detector ids_, we create a list of all the trajectories (i.e. we group all the particles) that have traveled across that sequence of detector ids.
+
+* As before, we keep the _weights_ that correspond to each hit.
+
+
 
 
 
