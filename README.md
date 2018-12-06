@@ -79,7 +79,7 @@ In case the execution is interrupted or some workers fail, `qsub_particles.py` w
 
 Since events are processed independently by _n_ workers, there is a final step to merge all processed events (i.e. the output files `event*-particles.csv`) into a single CSV file (which will be called `particles.csv`).
 
-As a result of this step, we will have a `particles.csv` file with about 48.0 GB.
+As a result of this step, we will have a `particles.csv` file of about 48.0 GB.
 
 ## The second step: _routes_
 
@@ -115,7 +115,7 @@ For this purpose:
 
 The results are sorted by _count_ in descending order, so that in the next step we consider first the sequences of detectors (i.e. the _routes_) that have been traveled by the largest number of particles.
 
-As a result of this first step, we will have a `routes.csv` file with about 23.5 GB.
+As a result of this first step, we will have a `routes.csv` file of about 23.5 GB.
 
 ### What is `qsub_routes.py`?
 
@@ -153,4 +153,4 @@ In case the execution is interrupted or some workers fail, `qsub_tracks.py` will
 
 Since events are processed independently, there is a final step to merge all processed events (i.e. the output files `event*-tracks.csv`) into a single CSV file (which will be called `tracks.csv`).
 
-As a result of this step, we will have a `tracks.csv` file with about 206.1 MB. This is the file submitted to the leaderboard.
+As a result of this step, we will have a `tracks.csv` file of about 206.1 MB. This is the file submitted to the leaderboard.
