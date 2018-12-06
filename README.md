@@ -27,7 +27,7 @@ From the numbers above, we have a total of about (10<sup>4</sup> events) * (10<s
 
 Although there are many particles, the routes that these particles travel through space are constrained by the experimental setup and the laws of physics. For example, since there is a magnetic field, charged particles will have helical trajectories.
 
-We could try to create a model that takes into account this particular experimental setup and the helical nature of particle trajectories. We could even try to learn that model from the training data, and I guess many competitors have worked along these lines.
+We could try to create a model that takes into account this particular experimental setup. We could even try to learn that model from the training data, and I guess many competitors have worked along these lines.
 
 However, in this competition I tried to use a more general approach. Regardless of the particular experimental setup, I tried to answer the following question:
 
