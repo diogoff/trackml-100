@@ -85,6 +85,16 @@ The core of this step is `routes.py`.
 
 It reads the output file from the first step (`particles.csv`) into memory (yes, it reads 48 GB into RAM; I tried using [Dask](https://dask.org/) to avoid this, but at the time of this competition Dask did not support the aggregations that will be computed next).
 
+The x,y,z position of each hit is brought into a new column named _position_.
+
+Now come the operations that are central to this approach:
+
+* For each particle, we create a sequence of _detector ids_ that the particle goes through (see above for the definition of _detector id_).
+
+* For each particle, we create a sequence of positions that the particle goes through.
+
+* For each particle, we also create 
+
 
 
 ## The third step: _tracks_
