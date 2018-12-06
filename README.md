@@ -203,4 +203,4 @@ In case the execution is interrupted or some workers fail, `qsub_tracks.py` will
 
 Since test events are processed independently, there is a final step to merge all processed events (i.e. the output files `event*-tracks.csv`) into a single CSV file (which will be called `tracks.csv`).
 
-As a result of this step, we will have a `tracks.csv` file of about 206.1 MB. This is the file submitted to the leaderboard.
+As a result of this step, we will have a `tracks.csv` file of about 206.1 MB. This is the submission file that can be uploaded to Kaggle.
