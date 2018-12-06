@@ -31,4 +31,4 @@ For example, since they are immersed in a magnetic field, charged particles will
 
 We could try to create a model that reproduces this particular experimental setup. We could even try to learn that model from the training data, and I guess many competitors have worked along these lines.
 
-However, in this competition I used a more general approach. Regardless of the particular experimental setup, I tried to answer the following question: Can we 
+However, in this competition I tried to use a more general approach. Regardless of the particular experimental setup, I tried to answer the following question: Can we 
