@@ -39,7 +39,7 @@ However, the problem of finding the training particles that best fit a set of te
 
 _Disclaimer:_ I never intended to compete based on such naïve approach. This was just something that I planned to use as a baseline to compare with other approaches that I would subsequently develop. However, as it often happens in Kaggle, the first idea that comes to mind is the one you will end up with.
 
-## How could such approach be computationally feasible?
+## How could this approach be computationally feasible?
 
 Searching for the training particles that best fit a set of test hits leads to a combinatorial explosion if the number of training particles and the number of test hits are both large.
 
