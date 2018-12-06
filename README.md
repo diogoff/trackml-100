@@ -31,6 +31,6 @@ For example, since they are immersed in a magnetic field, charged particles will
 
 We could try to create a model that reproduces this particular experimental setup. We could even try to learn that model from the training data, and I guess many competitors have worked along these lines.
 
-However, in this competition I tried to use a more general approach. Regardless of the particular experimental setup, but given that particle trajectories are constrained by such setup, I tried to answer the following question:
+However, in this competition I tried to use a more general approach. Regardless of the particular experimental setup, I tried to answer the following question:
 
 * *Given a large amount of training data (in the form of particle trajectories)*
