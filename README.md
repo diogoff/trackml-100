@@ -14,11 +14,11 @@ So, let's have a look at the code.
 
 ## Main idea
 
-* The training data for this competition contained on the order of 10<sup>4</sup> events (event ids);
+The training data for this competition contained on the order of 10<sup>4</sup> events (event ids);
 
-* each event contained on the order of 10<sup>4</sup> particles (particle ids);
+Each event contained on the order of 10<sup>4</sup> particles (particle ids);
 
-* and each particle contained on the order of 10 hits (hit ids).
+And each particle contained on the order of 10 hits (hit ids).
 
 From the numbers above, we have a total of about (10<sup>4</sup> events) * (10<sup>4</sup> particles per event) = 10<sup>8</sup> particles.
 
