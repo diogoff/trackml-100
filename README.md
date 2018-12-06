@@ -61,6 +61,8 @@ The hits for each (training) event are sorted by particle id and, for each parti
 
 The _x,y,z_ position of each hit is normalized by the distance to the origin.
 
+The end result -- in the form of a list of hits with event id, particle id, detector id, position x,y,z and weight --
+
 ### The second step: _routes_
 
 ### The third step: _tracks_
