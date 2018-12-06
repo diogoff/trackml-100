@@ -93,7 +93,7 @@ Now come the operations that are central to this approach:
 
 * For each particle, we create a sequence of _positions_ that the particle goes through (based on the new _position_ column that we just defined).
 
-* For each particle, we also keep the sequence of _weights_ that correspond to each hit.
+* For each particle, we also keep the sequence of _weights_ that correspond to each hit (see the dataset description for a definition of _weight_).
 
 
 
