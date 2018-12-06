@@ -91,9 +91,9 @@ Now come the operations that are central to this approach:
 
 * For each particle, we create a sequence of _detector ids_ that the particle goes through (see above for the definition of _detector id_).
 
-* For each particle, we create a sequence of positions that the particle goes through.
+* For each particle, we create a sequence of _positions_ that the particle goes through (based on the new _position_ column that we just defined).
 
-* For each particle, we also create 
+* For each particle, we also keep the sequence of _weights_ that correspond to each hit.
 
 
 
