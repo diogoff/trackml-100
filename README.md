@@ -67,6 +67,12 @@ The end result - in the form of a list of hits with event id, particle id, detec
 
 `qsub_particles.py` is a script to distribute the execution `particles.py` on a [PBS](https://www.pbspro.org/) cluster.
 
+Basically, it sets up _n_ workers by distributing the event ids in round-robin fashion across these workers.
+
+Each worker runs `particles.py` with the event ids that have been assigned to it.
+
+In case the execution is interrupted or some workers fail, `qsub_particles.py` will check which event ids are missing processing and will again launch _n_ workers to handle those missing events.
+
 ## The second step: _routes_
 
 ## The third step: _tracks_
