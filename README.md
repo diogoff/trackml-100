@@ -51,7 +51,7 @@ Searching for the training particles that best fit a set of test hits leads to a
 
 The problem seems unapproachable in this way, unless...
 
-We take into account the discretization of space that is present in this problem through the use of detectors (volume ids, layer ids, module ids).
+We take into account the discretization of space that is offered to us through the use of detectors (volume ids, layer ids, module ids). See my [kernel](https://www.kaggle.com/diogoff/visualizing-the-detectors) for a visualization of these detectors.
 
 We assume that when a training particle goes across a detector, we only need to consider the test hits on the same detector, and we can forget about every other test hit in other detectors. This drastically reduces the number of distances to be computed.
 
