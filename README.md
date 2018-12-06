@@ -133,9 +133,9 @@ The core of this step is `tracks.py`. This script receives a (test) event id and
 
 Hits are grouped by _detector id_. For each detector id, we have a list of hit ids, and another list with their corresponding positions.
 
-`tracks.py` reads `routes.csv` that was created in the previous step. It goes through this file line by line.
+`tracks.py` reads `routes.csv` that was created in the previous step. It goes through this file line by line, where each line corresponds to a different route.
 
-
+The idea is to pick up the (test) hits that are closest to the route being considered.
 
 Since routes have been sorted in descending order of particle count, when we get to unique, one-of-a-kind routes that have been traveled by a single particle, we simply discard those routes and stop reading `routes.csv`. (We take these as untrustworthy, possibly random routes that are not worth considering. Anyway, by this point most hits should have been taken up by more trustworthy routes.)
 
