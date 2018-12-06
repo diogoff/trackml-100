@@ -49,7 +49,26 @@ Now consider that there are on the order of 10<sup>8</sup> particles in the trai
 
 After computing all these distances, there is still the problem of assigning each test hit to a single particle. If multiple particles compete for the same test hits, we have another combinatorial problem of deciding how to assign test hits to training particles so that we get an overall best fit.
 
-The problem seems unapproachable in this way, unless... we take into account 
+The problem seems unapproachable in this way, unless...
+
+We take into account the discretization of space that is present in this problem through the use of detectors (volume ids, layer ids, module ids).
+
+We assume that when a training particle goes across a detector, we only need to consider the test hits on the same detector, and we can forget about every other test hit in other detectors. This drastically reduces the number of distances to be computed.
+
+If a training particle goes through a sequence of detectors, then the relevant test hits are those that reside on the same sequence of detectors.
+
+We call this sequence of detectors a _route_.
+
+Now, in the figure above, we see that particles are scattered more or less radially (and helically) from the collision point. This means that not every route is possible.
+
+If a particle contains on the order of 10 hits
+
+
+
+
+
+
+
 
 ## The solution in 3 steps
 
