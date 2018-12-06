@@ -209,4 +209,4 @@ As a result of this step, we will have a `tracks.csv` file of about 206.1 MB. Th
 
 Some time during the competition, I went to library at my university and bumped into this stack of CERN proceedings from the 1970s:
 
-<p align="center"><img src="https://raw.githubusercontent.com/diogoff/trackml-100/master/images/proceedings.jpg"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/diogoff/trackml-100/master/images/proceedings.png"></p>
