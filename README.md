@@ -39,7 +39,7 @@ However, the problem of finding the training particles that best fit a set of te
 
 _Disclaimer:_ I never intended to compete based on such naïve approach. This was just something that I planned to use as a baseline to compare with other approaches that I would subsequently develop. However, as it often happens in Kaggle, the first idea that comes to mind is the one you will end up with.
 
-## How could this approach be computationally feasible?
+## How could this approach ever be computationally feasible?
 
 Searching for the training particles that best fit a set of test hits leads to a combinatorial explosion if the number of training particles and the number of test hits are both large.
 
@@ -53,13 +53,11 @@ The problem seems unapproachable in this way, unless...
 
 We take into account the discretization of space that is offered to us through the use of detectors (volume ids, layer ids, module ids). See my [kernel](https://www.kaggle.com/diogoff/visualizing-the-detectors) for a visualization of these detectors.
 
-We assume that when a training particle goes across a detector, we only need to consider the test hits on the same detector, and we can forget about every other test hit in other detectors. This drastically reduces the number of distances to be computed.
+We assume that when a training particle goes across a detector, we only need to consider the test hits on the same detector, and forget about every other test hit in other detectors. This drastically reduces the number of distances to be computed.
 
-If a training particle goes through a sequence of detectors, then the relevant test hits are those that reside on the same sequence of detectors.
+If a training particle goes through a sequence of detectors, then the relevant test hits are those that reside on the same sequence of detectors. We call this sequence of detectors a _route_.
 
-We call this sequence of detectors a _route_.
-
-Now, in the figure above, we see that particles are scattered more or less radially (and helically) from the collision point. This means that not every route is possible.
+Now, in the figure above, we see that particles are scattered more or less radially (and helically) from the collision point. This means that not every route is possible or plausible.
 
 If a particle contains on the order of 10 hits
 
