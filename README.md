@@ -14,4 +14,4 @@ So, let's have a look at the code.
 
 ## Main idea
 
-The training data for this competition contained a number of events (event ids) on the order of 10<sup>4</sup>.
+The training data for this competition contained on the order of 10<sup>4</sup> events (event ids).
