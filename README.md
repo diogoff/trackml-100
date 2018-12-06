@@ -123,7 +123,7 @@ Nothing special. Only the command that runs `routes.py` on a [PBS](https://www.p
 
 ## The third step: _tracks_
 
-...
+The core of this step is `tracks.py`.
 
 #### What is `qsub_tracks.py`?
 
