@@ -129,7 +129,7 @@ In a similar way to `particles.py`, it builds a _detector id_ by concatenating t
 
 Also in a similar way to `particles.py`, the x,y,z position of each hit is normalized by the distance to the origin.
 
-In a similar way to `routes.py`, the x,y,z position of each hit is brought into a new column named position.
+In a similar way to `routes.py`, the x,y,z position of each hit is brought into a new column named _position_.
 
 #### What is `qsub_tracks.py`?
 
