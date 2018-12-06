@@ -51,22 +51,25 @@ Searching for the training particles that best fit the test hits leads to a comb
 
 The problem seems unapproachable in this way, unless...
 
+## Taking advantage of the detectors
+
 We take into account the discretization of space that is offered to us through the use of detectors (volume ids, layer ids, module ids). See my [kernel](https://www.kaggle.com/diogoff/visualizing-the-detectors) for a visualization of these detectors.
 
 We assume that when a training particle goes across a detector, we only need to consider the test hits on the same detector, and forget about every other test hit in other detectors. This drastically reduces the number of distances to be computed.
 
-If a training particle goes through a sequence of detectors, then the relevant test hits are those that reside on the same sequence of detectors. We call this sequence of detectors a _route_.
+In other words, if a training particle goes through a sequence of detectors, then the relevant test hits are those that reside on the same sequence of detectors.
 
-Now, in the figure above, we see that particles are scattered more or less radially (and helically) from the collision point. This means that not every route is possible or plausible.
+We call this sequence of detectors a _route_. Several particles may follow the same route (i.e. the same sequence of detectors), so the number of routes is less than the number of particles.
 
-If a particle contains on the order of 10 hits
+Now, in the figure above, we see that particles are scattered more or less radially (and helically) from the collision point. This means that only certain routes (i.e. the ones that comply with such physical behavior) are plausible.
 
+If the training dataset is sufficiently rich to provide us with all (or most of) the plausible routes, then it would be reasonable to expect that the test hits come from particles that also comply with those routes.
 
+For each route, we pick the test hits that best fit that route. Only test hits in the same sequence of detectors are considered. We give a score to how good each route can be fitted by test hits.
 
+After having computed the score for all routes, we sort routes by score, with the best score first.
 
-
-
-
+We then assign test hits to routes on a first-come, first-served basis. The first routes to come (which are the ones with best score) can pick the test hits that best suit them. The remaining routes will have to pick test hits from the leftovers.
 
 ## The solution in 3 steps
 
