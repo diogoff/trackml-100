@@ -87,13 +87,18 @@ It reads the output file from the first step (`particles.csv`) into memory (yes,
 
 The x,y,z position of each hit is brought into a new column named _position_.
 
-Now come the operations that are central to this approach:
+Now comes the first of two _group by_ operations that are central to this approach:
 
 * For each particle, we create a sequence of _detector ids_ that the particle goes through (see above for the definition of _detector id_).
 
 * For each particle, we create a sequence of _positions_ that the particle goes through (based on the new _position_ column that we just defined).
 
 * For each particle, we also keep the sequence of _weights_ that correspond to each hit (see the dataset description for a definition of _weight_).
+
+Now comes the second _group by_ operation that is central to this approach:
+
+* For each sequence of _detector ids_, 
+
 
 
 
