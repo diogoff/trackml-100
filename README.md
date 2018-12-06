@@ -63,7 +63,7 @@ The _x,y,z_ position of each hit is normalized by the distance to the origin.
 
 The end result - in the form of a list of hits with event id, particle id, detector id, position x,y,z and weight - is saved to a CSV file (`event*-particles.csv`).
 
-### What is `qsub_particles.py`?
+#### What is `qsub_particles.py`?
 
 `qsub_particles.py` is a script to distribute the execution `particles.py` on a [PBS](https://www.pbspro.org/) cluster.
 
@@ -73,7 +73,7 @@ Each worker runs `particles.py` with the event ids that have been assigned to it
 
 In case the execution is interrupted or some workers fail, `qsub_particles.py` will check which event ids are missing processing and will again launch _n_ workers to handle those missing events.
 
-### What is `merge_particles.py`?
+#### What is `merge_particles.py`?
 
 Since events are processed independently by _n_ workers, there is a final step to merge all events (i.e. the output `event*-particles.csv` files) into a single CSV file (which will be called `particles.csv`).
 
