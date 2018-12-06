@@ -49,7 +49,7 @@ Now consider that there are on the order of 10<sup>8</sup> particles in the trai
 
 After computing all these distances, there is still the problem of assigning each test hit to a single particle. If multiple particles compete for the same test hits, we have another combinatorial problem of deciding how to assign test hits to training particles so that we get an overall best fit.
 
-
+The problem seems unapproachable in this way, unless... we take into account 
 
 ## The solution in 3 steps
 
