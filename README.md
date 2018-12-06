@@ -47,7 +47,7 @@ _Disclaimer:_ I never intended to compete based on such naïve approach. This wa
 
 3. The third step is _tracks_: it comprises `qsub_tracks.py`, `tracks.py` and `merge_tracks.py`.
 
-### The first step: _particles_
+## The first step: _particles_
 
 The core of this step is `particles.py`. For a given event id (or set of event ids), this script reads and joins the hits file and the truth file for that event id  (`event*-hits.csv` and `event*-truth.csv`).
 
@@ -63,9 +63,11 @@ The _x,y,z_ position of each hit is normalized by the distance to the origin.
 
 The end result - in the form of a list of hits with event id, particle id, detector id, position x,y,z and weight - is saved to a CSV file (`event*-particles.csv`).
 
-#### What is `qsub_particles.py`?
+### What is `qsub_particles.py`?
 
-### The second step: _routes_
+`qsub_particles.py` is a script to distribute the execution `particles.py` on a [PBS](https://www.pbspro.org/) cluster.
 
-### The third step: _tracks_
+## The second step: _routes_
+
+## The third step: _tracks_
 
