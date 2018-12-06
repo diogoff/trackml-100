@@ -25,9 +25,7 @@ From the numbers above, we have a total of about (10<sup>4</sup> events) * (10<s
 <p align="center"><img src="https://raw.githubusercontent.com/diogoff/trackml-100/master/images/trackml.png"></p>
 <p align="center">(Source: <a href="https://sites.google.com/site/trackmlparticle/">https://sites.google.com/site/trackmlparticle/</a>)</p>
 
-Although there are many particles, the routes that these particles travel through space are constrained by the experimental setup and the laws of physics.
-
-For example, since they are immersed in a magnetic field, charged particles will have helical trajectories.
+Although there are many particles, the routes that these particles travel through space are constrained by the experimental setup and the laws of physics. For example, since they are immersed in a magnetic field, charged particles will have helical trajectories.
 
 We could try to create a model that reproduces this particular experimental setup. We could even try to learn that model from the training data, and I guess many competitors have worked along these lines.
 
