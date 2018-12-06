@@ -107,18 +107,17 @@ We are _not_ going to keep multiple particles for each sequence of detectors. In
 
 For this purpose:
 
-* We keep the _count_ of particles that have traveled across each sequence of detectors.
+* We keep the _count_ of particles that have traveled across the same sequence of detectors.
 
 * We keep the mean _position_ of the particle hits at each detector, along the sequence of detectors.
 
 * We keep the mean _weight_ of the particle hits at each detector, along the sequence of detectors.
 
+The results are sorted by _count_ in descending order, so that in the next step we consider first the sequences of detectors (i.e. the _routes_) that have been traveled by the largest number of particles.
 
+#### What is `qsub_routes.py`?
 
-
-
-
-
+Nothing special. Only the command that runs `routes.py` on a [PBS](https://www.pbspro.org/) cluster.
 
 ## The third step: _tracks_
 
