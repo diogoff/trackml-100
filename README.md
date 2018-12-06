@@ -41,6 +41,11 @@ _Disclaimer:_ I never intended to compete based on such naïve approach. This wa
 
 ## The solution in 3 steps
 
+1. The first step is _particles_: it comprises `qsub_particles.py`, `particles.py` and `merge_particles.py`.
+
+2. The second step is _routes_: it comprises `qsub_routes.py`, `routes.py`.
+
+3. The third step is _tracks_: it comprises `qsub_tracks.py`, `tracks.py` and `merge_tracks.py`.
 
 
 
