@@ -83,7 +83,7 @@ As a result of this first step, we will have a `particles.csv` file with about 4
 
 The core of this step is `routes.py`.
 
-It reads the output file from the first step (`particles.csv`) into memory (yes, it reads 48.0 GB into RAM; I tried using [Dask](https://dask.org/) to avoid this, but at the time of this competition Dask did not support the aggregations that will be computed next).
+It reads the output file from the first step (`particles.csv`) into memory (yes, it reads 48 GB into RAM; I tried using [Dask](https://dask.org/) to avoid this, but at the time of this competition Dask did not support the aggregations that will be computed next).
 
 
 
