@@ -33,7 +33,7 @@ However, in this competition I tried to use a more general approach. Regardless 
 
 * *Given a large amount of training particles, is it possible to do track reconstruction from test hits by finding the training particles that best fit the test hits?*
 
-Apparently, the answer to this question is _yes_, but there are way better approaches for track reconstruction. This suggests that the training set does not seem to include all the tracks that may occur in a test experiment.
+Apparently, the answer to this question is _yes_, but the results are not that good (they ranked only #100 after all). This seems to indicate that the training set does not include all the tracks that may occur during a test experiment.
 
 However, the problem of finding the training particles that best fit a set of test hits is an interesting computational problem by itself. I spent my whole time in the competition trying to come up with a feasible computational approach to this problem.
 
