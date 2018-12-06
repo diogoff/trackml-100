@@ -91,11 +91,11 @@ All particle ids within an event are renumbered sequentially, starting from 1.
 
 A _detector id_ is built by concatenating the volume id, layer id and module id for each hit.
 
-The hits for each (training) event are sorted by particle id and, for each particle id, the hits are sorted by absolute value of _z_.
+The hits for each training event are sorted by particle id and, for each particle id, they are sorted by absolute value of _z_.
 
 The _x,y,z_ position of each hit is normalized by the distance to the origin.
 
-The end result - in the form of a list of hits with event id, particle id, detector id, position x,y,z and weight - is saved to a CSV file (`event*-particles.csv`).
+The end result - in the form of a list of hits with event id, particle id, detector id, position, and weight - is saved to a CSV file (`event*-particles.csv`).
 
 ### What is `qsub_particles.py`?
 
@@ -105,11 +105,11 @@ Basically, it sets up _n_ workers by distributing the event ids in round-robin f
 
 Each worker runs `particles.py` with the event ids that have been assigned to it.
 
-In case the execution is interrupted or some workers fail, `qsub_particles.py` will check which event ids are missing processing and will again launch _n_ workers to handle those missing events.
+In case the execution is interrupted or some workers fail, `qsub_particles.py` will check which event ids are missing and will again launch _n_ workers to handle those missing events.
 
 ### What is `merge_particles.py`?
 
-Since events are processed independently by _n_ workers, there is a final step to merge all processed events (i.e. the output files `event*-particles.csv`) into a single CSV file (which will be called `particles.csv`).
+Since events are processed independently, there is a final step to merge all processed events (i.e. the output files `event*-particles.csv`) into a single CSV file (which will be called `particles.csv`).
 
 As a result of this step, we will have a `particles.csv` file of about 48.0 GB.
 
