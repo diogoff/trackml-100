@@ -165,53 +165,42 @@ The core of this step is `tracks.py`. This script receives a (test) event id and
 
 * In a similar way to `routes.py`, the x,y,z position of each hit is brought into a new column named _position_.
 
-The (test) hits are grouped by _detector id_. For each detector id, we have a list of hit ids, and another list with their corresponding positions.
+The test hits are grouped by _detector id_. For each detector id, we have a list of hit ids, and another list with their corresponding positions.
 
 `tracks.py` reads `routes.csv` that was created in the previous step. It goes through this file line by line, where each line corresponds to a different route.
 
-The idea is to pick up the (test) hits that are closest to the route being considered. For each detector along the route, we calculate the distance between all test hits at that detector and the (mean) _position_ of the route at the same detector.
+The idea is to pick up the test hits that are closest to the route being considered. For each detector along the route, we calculate the distance between all test hits at that detector and the (mean) position of the route at the same detector.
 
-The best hits are those that result in the lowest average distance along the route, where this average is calculated by taking into account the (mean) _weight_ associated with each detector along the route.
+The best test hits are those that result in the lowest average distance across the route, where this average distance is calculated by taking into account the (mean) weight associated with each detector along the route.
 
+Some computational shortcuts:
 
+* Since routes have been sorted in descending order of particle count, when we get to routes that have been traveled by a single particle, we simply discard those routes and stop reading `routes.csv`. The rationale for doing this is that we take these routes as random, one-of-a-kind routes that are not worth considering. 
 
+* There is no point in considering routes whose weights are all zero, so we skip these routes as well, in case they appear.
 
-have the mean position 
+* Also, we only consider routes for which there are test hits for all detectors along that route. If there are no test hits in some detector along the route, we skip that route.
 
+We sort the routes by the average distance that has been calculated from the best test hits. The routes with lowest average distance will be listed first, as these seem to yield a better fit to the test hits.
 
+Test hits are assigned to routes on a first-come, first-served basis. Since the best-fitted routes are listed first, these these can pick the test hits that best suit them. The remaining routes will have to pick test hits from the leftovers.
 
+Every route considered in this way is the basis for a new track id.
 
+Any test hits that were left unpicked by routes are assigned track id zero.
 
-
-* Since routes have been sorted in descending order of particle count, when we get to unique, one-of-a-kind routes that have been traveled by a single particle, we simply discard those routes and stop reading `routes.csv`. (We take these as untrustworthy, possibly random routes that are not worth considering. Anyway, by this point most hits should have been taken up by more trustworthy routes.)
-
-* There is no point in considering routes whose weights are all zero, so we skip these routes as well.
-
-* Also 
-
-
-
-
-
-
-
-
-
-
-
-
-
+The results - in the form of a list of test hits with event id, hit id and track id - are saved to a CSV file (`event*-tracks.csv`).
 
 ### What is `qsub_tracks.py`?
 
 `qsub_tracks.py` is a script to distribute the execution `tracks.py` on a [PBS](https://www.pbspro.org/) cluster.
 
-The (test) events are processed in parallel. Each (test) event id is processed by a separate worker.
+The test events are processed independently. Each event id is processed by a separate worker.
 
 In case the execution is interrupted or some workers fail, `qsub_tracks.py` will check which event ids are missing and will launch workers to handle those missing events.
 
 ### What is `merge_tracks.py`?
 
-Since events are processed independently, there is a final step to merge all processed events (i.e. the output files `event*-tracks.csv`) into a single CSV file (which will be called `tracks.csv`).
+Since test events are processed independently, there is a final step to merge all processed events (i.e. the output files `event*-tracks.csv`) into a single CSV file (which will be called `tracks.csv`).
 
 As a result of this step, we will have a `tracks.csv` file of about 206.1 MB. This is the file submitted to the leaderboard.
