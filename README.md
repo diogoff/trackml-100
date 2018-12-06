@@ -43,11 +43,11 @@ _Disclaimer:_ I never intended to compete based on such naïve approach. This wa
 
 Searching for the training particles that best fit a set of test hits leads to a combinatorial explosion if the number of training particles and the number of test hits are both large.
 
-First, to find the best test hits for a single training particle involves computing the distances between all test hits and the particle trajectory. This seems straightforward until one realizes that each test event has on the order of 10<sup>5</sup> test hits. If a training particle has on the order of 10 hits, there are on the order of 10<sup>6</sup> three-dimensional distances to compute.
+* First, to find the best test hits for just a single training particle involves computing the distances between all test hits and the particle trajectory. This seems doable until one realizes that each test event has on the order of 10<sup>5</sup> test hits. If a training particle has on the order of 10 hits, there are on the order of 10<sup>6</sup> three-dimensional distances to compute.
 
-Now consider that there are on the order of 10<sup>8</sup> particles in the training set, as is the case in this competition. Suddenly, there are 10<sup>14</sup> three-dimensional distances to compute.
+* Now consider that there are on the order of 10<sup>8</sup> particles in the training set, as is the case in this competition. Suddenly, there are 10<sup>14</sup> three-dimensional distances to compute.
 
-After computing all these distances, there is still the problem of assigning each test hit to a single particle. If multiple particles compete for the same test hits, we have another combinatorial problem of deciding how to assign test hits to training particles so that we get an overall best fit.
+* After computing all these distances, there is still the problem of assigning each test hit to a single particle. If multiple particles compete for the same test hits, we have another combinatorial problem of deciding how to assign test hits to training particles so that we get an overall best fit.
 
 The problem seems unapproachable in this way, unless...
 
