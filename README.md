@@ -115,7 +115,7 @@ For this purpose:
 
 Such "mean trajectory" (defined by the mean position of particle hits at each detector along a sequence of detectors) is called a _route_.
 
-The results are sorted by _count_ in descending order, so that in the next step we consider first the routes that have been traveled by the largest number of particles.
+The results are sorted by _count_ in descending order, so that the routes that have been traveled by the largest number of particles are listed first.
 
 As a result of this first step, we will have a `routes.csv` file of about 23.5 GB.
 
@@ -133,15 +133,29 @@ The core of this step is `tracks.py`. This script receives a (test) event id and
 
 * In a similar way to `routes.py`, the x,y,z position of each hit is brought into a new column named _position_.
 
-Hits are grouped by _detector id_. For each detector id, we have a list of hit ids, and another list with their corresponding positions.
+The (test) hits are grouped by _detector id_. For each detector id, we have a list of hit ids, and another list with their corresponding positions.
 
 `tracks.py` reads `routes.csv` that was created in the previous step. It goes through this file line by line, where each line corresponds to a different route.
 
-The idea is to pick up the (test) hits that are closest to the route being considered.
+The idea is to pick up the (test) hits that are closest to the route being considered. For each detector along the route, we calculate the distance between all test hits at that detector and the (mean) _position_ of the route at the same detector.
 
-Since routes have been sorted in descending order of particle count, when we get to unique, one-of-a-kind routes that have been traveled by a single particle, we simply discard those routes and stop reading `routes.csv`. (We take these as untrustworthy, possibly random routes that are not worth considering. Anyway, by this point most hits should have been taken up by more trustworthy routes.)
+The best hits are those that result in the lowest average distance along the route, where this average is calculated by taking into account the (mean) _weight_ associated with each detector along the route.
 
-Also, there is no point in cosidering routes whose weights are all zero, so we skip these routes as well.
+
+
+
+have the mean position 
+
+
+
+
+
+
+* Since routes have been sorted in descending order of particle count, when we get to unique, one-of-a-kind routes that have been traveled by a single particle, we simply discard those routes and stop reading `routes.csv`. (We take these as untrustworthy, possibly random routes that are not worth considering. Anyway, by this point most hits should have been taken up by more trustworthy routes.)
+
+* There is no point in considering routes whose weights are all zero, so we skip these routes as well.
+
+* Also 
 
 
 
