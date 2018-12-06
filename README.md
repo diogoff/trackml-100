@@ -22,4 +22,4 @@ So, let's have a look at the code.
 
 From the numbers above, we have a total of about (10<sup>4</sup> events) * (10<sup>4</sup> particles per event) = 10<sup>8</sup> particles.
 
-<p align="center"><img src="https://raw.githubusercontent.com/diogoff/trackml-100/master/frames/trackml.png" width="540"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/diogoff/trackml-100/master/images/trackml.png" width="540"></p>
