@@ -83,7 +83,7 @@ All particle ids (within an event) are renumbered sequentially, starting from 1.
 
 A _detector id_ is built by concatenating the volume id, layer id and module id for each hit.
 
-The hits for each training event are sorted by particle id and then by absolute value of _z_.
+The hits for each event are sorted by particle id and then by absolute value of _z_.
 
 The _x,y,z_ position of each hit is normalized by the distance to the origin. (This will be important when calculating average distances, because distances far away from the origin could be much larger than distances close to the origin.)
 
