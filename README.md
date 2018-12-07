@@ -79,7 +79,7 @@ The core of this step is `particles.py`. For a given event id (or set of event i
 
 Random hits are discarded (those with particle id equal to zero).
 
-All particle ids within an event are renumbered sequentially, starting from 1.
+All particle ids (within an event) are renumbered sequentially, starting from 1.
 
 A _detector id_ is built by concatenating the volume id, layer id and module id for each hit.
 
