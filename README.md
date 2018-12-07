@@ -153,7 +153,7 @@ The core of this step is `tracks.py`. For a given test event, this script reads 
 
 * In a similar way to `routes.py`, the x,y,z position of each test hit is brought into a new column named _position_.
 
-The test hits are grouped by _detector id_. For each detector id, we have a list of test hit ids, and another list with their corresponding positions.
+The test hits are grouped by _detector id_. For each detector id, we have a list of test hit ids, and another list with their positions.
 
 Subsequently, `tracks.py` reads `routes.csv` that was created in the previous step. It goes through this file line by line, where each line corresponds to a different route.
 
