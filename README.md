@@ -45,6 +45,19 @@ In the original dataset for the competition, every particle hit is associated wi
 
 ### Using routes instead of particles
 
+To reduce the computational burden, we group the particles that pass through exactly the same sequence of detectors. These particles are said to have the same _route_.
+
+In the picture below, we consider three detectors and four particles that pass through these (and only these) detectors in exactly the same sequence.
+
+<p align="center"><img src="https://raw.githubusercontent.com/diogoff/trackml-100/master/images/route.png" width="600"></p>
+
+The route is calculated as the "mean trajectory" of these particles. At each detector, we calculate mean position of the particle hits. The sequence of such positions across detectors defines the route.
+
+
+
+
+
+
 We call each sequence of detectors a _route_. Several particles may follow the same route (i.e. the same sequence of detectors), so the number of routes is less than the number of particles.
 
 Now, in the figure above, we see that particles are scattered more or less radially (and helically) from the collision point. This means that only certain routes (i.e. the ones that comply with such physical behavior) are plausible.
