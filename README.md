@@ -157,7 +157,7 @@ The test hits are grouped by _detector id_. For each detector id, we have a list
 
 Subsequently, we read `routes.csv` that was created in the previous step. We go through this file line by line, where each line corresponds to a different route.
 
-For each route being considered, we go through the detector sequence in order to pick the test hits that are closest to the route position at each detector.
+For each route being considered, we go through the detector sequence in order to pick the best hits, i.e. the test hits that are closest to the route position at each detector.
 
 We then calculate the weighted average distance between route those test hits and the route positions across detectors.
 
