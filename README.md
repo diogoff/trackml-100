@@ -2,7 +2,9 @@
 
 This repository contains the solution ranked #100 in the private leaderboard of the [TrackML competition on Kaggle](https://www.kaggle.com/c/trackml-particle-identification).
 
-100<sup>th</sup> place?? Why should anyone care? Because this solution was identified as an "odd one" in [post-competition analysis](https://twitter.com/trackmllhc/status/1070339064094736390).
+100<sup>th</sup> place?? Why should anyone care? Because this solution performed particularly well at reconstructing tracks 
+
+was identified as an "odd one" in [post-competition analysis](https://twitter.com/trackmllhc/status/1070339064094736390).
 
 As [David Rousseau](https://www.kaggle.com/c/trackml-particle-identification/discussion/69981#433908) (competition organizer) puts it:
 
@@ -59,7 +61,11 @@ To identify candidate tracks, we follow the same process as described above, but
 
 <p align="center"><img src="https://raw.githubusercontent.com/diogoff/trackml-100/master/images/track.png" width="600"></p>
 
-This means that only one candidate track will be considered for each unique sequence of detectors.
+This means that only one candidate track will be considered for each unique sequence of detectors. However, different routes may share some detectors, so candidate tracks may compete for test hits on some detectors.
+
+Better candidate tracks (i.e. the ones with smaller average distance) will be given priority in picking their test hits. Other candidate tracks (with larger average distances) will have to pick their test hits from the leftovers.
+
+This could make some candidate tracks even worse, by slightly increasing their average distance. For simplicity, we do not update the average distances for tracks. All decisions are made based on average distance that was calculated initially, without considering conflicts.
 
 ## The solution in 3 steps
 
