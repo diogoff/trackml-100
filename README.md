@@ -39,7 +39,7 @@ The main idea is to do the following:
 
 * Repeat this process for every training particle. Get the closest test hit on each detector that the particle passes through. Calculate the average distance between particle hits and their closest test hits across detectors.
 
-* For each training particle that is considered, there will a candidate track comprising the test hits that are closest to that particle. This candidate track is characterized by a certain average distance. 
+* For each training particle that is considered, there will be a candidate track comprising the test hits that are closest to that particle. This candidate track is characterized by a certain average distance. 
 
 * The best candidate tracks are the ones that have the smallest average distances.
 
