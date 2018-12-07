@@ -41,37 +41,9 @@ For each training particle that is considered, there will a candidate track comp
 
 The best candidate tracks are the ones that have the smallest average distances.
 
-_Note:_ In the original dataset for the competition, every particle hit is associated with a certain _weight_. When computing the average distances above, use a weighted average that takes these weights into account.
+In the original dataset for the competition, every particle hit is associated with a certain _weight_. When computing the average distances above, use a weighted average that takes these weights into account.
 
-### Is this computationally feasible?
-
-
-
-
-
-
-
-
-
-Searching for the training particles that best fit the test hits leads to a combinatorial explosion if the number of training particles and the number of test hits are both large.
-
-* First, to find the best test hits for just a single training particle involves computing the distances between all test hits and the particle trajectory. If a test event has on the order of 10<sup>5</sup> test hits, and if a training particle has on the order of 10 hits, there are on the order of 10<sup>6</sup> three-dimensional distances to compute.
-
-* Now consider that there are on the order of 10<sup>8</sup> particles in the training set, as is the case in this competition. Suddenly, there are 10<sup>14</sup> three-dimensional distances to compute.
-
-* After computing all these distances, there is still the problem of assigning each test hit to a single particle. If multiple particles compete for the same test hits, we have another combinatorial problem of deciding how to assign test hits to training particles so that we get an overall best fit.
-
-The problem seems unapproachable in this way, unless...
-
-### Taking advantage of the detectors
-
-We take into account the discretization of space that is offered to us by the use of detectors (volume ids, layer ids, module ids). See my [kernel](https://www.kaggle.com/diogoff/visualizing-the-detectors) for a visualization of these detectors.
-
-We assume that when a training particle goes across a detector, we only need to consider the test hits on the same detector, and forget about every other test hit in other detectors. This drastically reduces the number of distances to be computed.
-
-In other words, if a training particle goes through a sequence of detectors, then the relevant test hits are those that reside on the same sequence of detectors.
-
-### Routes instead of particles
+### Using routes instead of particles
 
 We call each sequence of detectors a _route_. Several particles may follow the same route (i.e. the same sequence of detectors), so the number of routes is less than the number of particles.
 
