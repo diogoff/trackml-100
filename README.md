@@ -75,7 +75,7 @@ This could make some candidate tracks even worse, by slightly increasing their a
 
 ## The first step: _particles_
 
-The core of this step is `particles.py`. For a given event id (or set of event ids), this script reads and joins the hits file and the truth file for that event id  (`event*-hits.csv` and `event*-truth.csv`).
+The core of this step is `particles.py`. For a given event id (or set of event ids), this script reads and joins the hits file and the truth file for that event  (`event*-hits.csv` and `event*-truth.csv`).
 
 Random hits are discarded (those with particle id equal to zero).
 
