@@ -167,7 +167,7 @@ Some computational shortcuts when iterating through all the routes:
 
 * There is no point in considering routes whose weights are all zero, so we skip these routes as well, in case they appear.
 
-* Also, we consider routes for which there are test hits in _every_ detector along that route. If there are no test hits in some detector along the route, we skip that route.
+* Only those routes for which there are test hits in _every_ detector along that route should be considered. If there are no test hits in some detector along the route, we skip that route.
 
 After iterating through routes, we sort them by average distance. Routes with lower average distance will be listed first, as these seem to be a better fit to the test hits.
 
