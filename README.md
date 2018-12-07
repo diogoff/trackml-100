@@ -35,7 +35,7 @@ In the picture above, there is a training particle that passes through three det
 
 Pick the test hits that are closest to the particle hits on each detector. Calculate the average distance between the particle hits and their closest test hits across the detectors.
 
-Repeat this process for every training particle. Get the closest test hit on each detector that the particle passes through. Calculate the average distance between particle hits and those test hits.
+Repeat this process for every training particle. Get the closest test hit on each detector that the particle passes through. Calculate the average distance between particle hits and their test hits across detectors.
 
 From this process, there will be several candidate tracks, one for each training particle that has been considered. Each of these candidate tracks is associated with a certain average distance. The best candidate tracks are the ones that have the smallest average distances.
 
