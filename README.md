@@ -173,7 +173,7 @@ After iterating through routes, we sort them by average distance. Routes with lo
 
 Test hits are then assigned to routes on a first-come, first-served basis. Since the best-fitting routes are listed first, these can pick the test hits that best suit them. The remaining routes will have to pick test hits from the leftovers.
 
-Every route corresponds to a new track id. Any test hits that were left unpicked by routes are assigned a track id of zero.
+The test hits that have been picked by a route are assigned the same (a new) track id. Any test hits that were left unpicked by routes are assigned a track id of zero.
 
 The end result - in the form of a list of test hits with event id, hit id and track id - are saved to a CSV file (`event*-tracks.csv`).
 
