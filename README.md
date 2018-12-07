@@ -14,7 +14,7 @@ So, let's have a look at the solution.
 
 ## Introduction
 
-The training set for this competition contains on the order of 10<sup>4</sup> events (event ids). Each event contains on the order of 10<sup>4</sup> particles (particle ids). Therefore, there are a total of about (10<sup>4</sup> events) * (10<sup>4</sup> particles per event) = 10<sup>8</sup> training particles.
+The training set contains on the order of 10<sup>4</sup> events (event ids). Each event contains on the order of 10<sup>4</sup> particles (particle ids). Therefore, there are a total of about (10<sup>4</sup> events) * (10<sup>4</sup> particles per event) = 10<sup>8</sup> training particles.
 
 <p align="center"><img src="https://raw.githubusercontent.com/diogoff/trackml-100/master/images/trackml.png" width="450"></p>
 <p align="center">(Source: <a href="https://sites.google.com/site/trackmlparticle/">https://sites.google.com/site/trackmlparticle/</a>)</p>
