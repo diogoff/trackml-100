@@ -63,7 +63,7 @@ To identify candidate tracks, we follow the same process as described above, but
 
 This means that only one candidate track will be considered for each unique sequence of detectors. However, different routes may share some detectors, so candidate tracks may compete for test hits on those detectors.
 
-In general, better candidate tracks (i.e. the ones with smaller average distance) will be given priority in picking their test hits. Other candidate tracks (with larger average distances) will have to pick their test hits from the leftovers.
+In general, better candidate tracks (i.e. the ones with smaller average distance) are given priority in picking their test hits. Other candidate tracks (with larger average distances) have to pick their test hits from the leftovers.
 
 This could make some candidate tracks even worse, by slightly increasing their average distance. For simplicity, we do not update the average distances for tracks. All decisions are made based on average distance that was calculated initially, without considering conflicts.
 
