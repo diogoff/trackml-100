@@ -161,7 +161,7 @@ For each route being considered, we go through the detector sequence in order to
 
 We then calculate the weighted average distance between those test hits and the route positions across detectors.
 
-Some computational shortcuts when iterating through routes:
+Some computational shortcuts when iterating through all the routes:
 
 * Since routes have been sorted in descending order of particle count, when we get to routes that have been traveled by a single particle, we simply discard those routes and stop reading `routes.csv`. The rationale for doing this is that these could be random, one-of-a-kind routes that are not worth considering. 
 
