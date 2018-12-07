@@ -14,7 +14,7 @@ So, let's have a look at the solution.
 
 ## Introduction
 
-The training set for this competition contains on the order of 10<sup>4</sup> events (event ids). Each event contains on the order of 10<sup>4</sup> particles (particle ids). Therefore, we have a total of about (10<sup>4</sup> events) * (10<sup>4</sup> particles per event) = 10<sup>8</sup> training particles.
+The training set for this competition contains on the order of 10<sup>4</sup> events (event ids). Each event contains on the order of 10<sup>4</sup> particles (particle ids). Therefore, there are a total of about (10<sup>4</sup> events) * (10<sup>4</sup> particles per event) = 10<sup>8</sup> training particles.
 
 <p align="center"><img src="https://raw.githubusercontent.com/diogoff/trackml-100/master/images/trackml.png"></p>
 <p align="center">(Source: <a href="https://sites.google.com/site/trackmlparticle/">https://sites.google.com/site/trackmlparticle/</a>)</p>
@@ -23,13 +23,22 @@ Although there are many particles, the routes that these particles travel throug
 
 We could try to create a model that takes into account this particular experimental setup. We could even try to learn that model from the training data, and I guess many competitors have worked along these lines.
 
-However, in this competition I attempted a more general approach. Regardless of the particular experimental setup, I tried to answer the following question:
+However, in this competition I tried a more general approach. Regardless of the particular experimental setup, I tried to answer the following question:
 
 * *Given a large amount of training particles, is it possible to do track reconstruction from test hits by finding the training particles that best fit the test hits?*
 
-To better explain this idea, consider the following figure:
+To better explain this idea, consider the following picture:
 
 <p align="center"><img src="https://raw.githubusercontent.com/diogoff/trackml-100/master/images/particle.png" width="600"></p>
+
+In the picture above, there are some test hits on three detectors. Let us pick a training particle that passes through these same detectors. Then some test hits will be closer to the training particle than others. 
+
+Pick the test hits that are closest to the particle hits on each detector. Calculate the average distance between the particle hits and the closest test hits on these detectors.
+
+Repeat this process for every training particle that passes through these same detectors. Calculate the average distance for all of them, based on the test hits that are closest to each particle.
+
+We will have several candidate tracks. The best candidate track is the one that corresponds to the smallest average distance.
+
 
 Apparently, the answer to this question is _yes_, but the results are not that good. This seems to indicate that the training set does not include all the tracks that may occur during a test experiment.
 
