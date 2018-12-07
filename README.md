@@ -58,7 +58,7 @@ This means that only one candidate track will be considered for each unique sequ
 
 In general, better candidate tracks (i.e. the ones with smaller average distance) are given priority in picking their test hits. Other candidate tracks (with larger average distances) have to pick their test hits from the leftovers.
 
-This could make some candidate tracks even worse, by slightly increasing their average distance. For simplicity, we do not update the average distances for tracks. Decisions are made based on the average distances that were calculated initially.
+This could make some candidate tracks even worse, by slightly increasing their average distance. For simplicity, we do not update the average distances for tracks. Decisions are based on the average distances that were calculated initially.
 
 ## The solution in 3 steps
 
