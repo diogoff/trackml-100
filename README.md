@@ -41,7 +41,7 @@ The main idea is to do the following:
 
 * For each training particle that is considered, there will be a candidate track comprising the test hits that are closest to that particle. This candidate track is characterized by a certain average distance. 
 
-* The best candidate tracks are the ones that have the smallest average distances.
+* The best candidate tracks are the ones with the smallest average distances.
 
 In the original dataset for the competition, every particle hit is associated with a certain _weight_. When computing the average distances above, use a weighted average that takes these weights into account.
 
