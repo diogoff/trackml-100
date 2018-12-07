@@ -2,7 +2,7 @@
 
 This repository contains the solution ranked #100 in the private leaderboard of the [TrackML competition on Kaggle](https://www.kaggle.com/c/trackml-particle-identification).
 
-100<sup>th</sup> place?? Why should anyone care? Because this solution appeared to be an "odd one" in [post-competition analysis](https://twitter.com/trackmllhc/status/1070339064094736390).
+100<sup>th</sup> place?? Why should anyone care? Because this solution was identified as an "odd one" in [post-competition analysis](https://twitter.com/trackmllhc/status/1070339064094736390).
 
 As [David Rousseau](https://www.kaggle.com/c/trackml-particle-identification/discussion/69981#433908) (competition organizer) puts it:
 
