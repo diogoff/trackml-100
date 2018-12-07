@@ -53,7 +53,7 @@ In the picture below, we consider three detectors and four particles that pass t
 
 <p align="center"><img src="https://raw.githubusercontent.com/diogoff/trackml-100/master/images/route.png" width="600"></p>
 
-The route is calculated as the "mean trajectory" of these particles. At each detector, we calculate mean position of the particle hits. The route is defined by the sequence of such positions across detectors.
+The route is calculated as the "mean trajectory" of these particles. At each detector, we calculate the mean position of the particle hits. The route is defined by the sequence of such positions across detectors.
 
 To identify candidate tracks, we follow the same process as described above, but now using routes instead of the original particles, as illustrated in the following picture:
 
