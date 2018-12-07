@@ -85,11 +85,11 @@ All particle ids within an event are renumbered sequentially, starting from 1.
 
 A _detector id_ is built by concatenating the volume id, layer id and module id for each hit.
 
-The hits for each training event are sorted by particle id and, for each particle id, they are sorted by absolute value of _z_.
+The hits for each training event are sorted by particle id and then by absolute value of _z_.
 
-The _x,y,z_ position of each hit is normalized by the distance to the origin.
+The _x,y,z_ position of each hit is normalized by the distance to the origin. (This will be important when calculating average distances, because distances far away from the origin could be much larger than distances close to the origin.)
 
-The end result - in the form of a list of hits with event id, particle id, detector id, position x,y,z and weight - is saved to a CSV file (`event*-particles.csv`).
+The end result - in the form of a list of hits with event id, particle id, detector id, normalized x,y,z and weight - is saved to a CSV file (`event*-particles.csv`).
 
 ### What is `qsub_particles.py`?
 
@@ -103,7 +103,7 @@ In case the execution is interrupted or some workers fail, `qsub_particles.py` w
 
 ### What is `merge_particles.py`?
 
-Since events are processed independently, there is a final step to merge all processed events (i.e. the output files `event*-particles.csv`) into a single CSV file (which will be called `particles.csv`).
+Since the events are processed independently, there is a final step to merge all processed events (i.e. the output files `event*-particles.csv`) into a single CSV file (which will be called `particles.csv`).
 
 As a result of this step, we will have a `particles.csv` file of about 48.0 GB.
 
@@ -113,7 +113,7 @@ The core of this step is `routes.py`.
 
 It reads the output file from the first step (`particles.csv`) into memory. (Yes, it reads 48 GB into RAM. I tried using [Dask](https://dask.org/) to avoid this, but at the time of this competition Dask did not support the aggregations that will be computed next.)
 
-The x,y,z position of each hit is brought into a new column named _position_.
+The x,y,z positions of each hit are brought together into a new column named _position_.
 
 The hits are grouped by particle id, and the following aggregations are performed:
 
@@ -123,31 +123,31 @@ The hits are grouped by particle id, and the following aggregations are performe
 
 * For each particle id, we also keep the sequence of _weights_ that correspond to the particle hits (see the dataset description for a definition of _weight_).
 
-Next is a group by sequence of detector ids, with the following aggregations being performed:
+Now that hits are grouped by particle, we will group particles by sequence of detectors (route):
 
-* For each sequence of _detector ids_, we group all the particles that have traveled across that sequence of detectors. The hit positions for those particles will be stored in a 2D array where each row represents a different particle. Specifically, each row contains the list of hit positions as the particle goes through the sequence of detectors.
+* For each sequence of _detector ids_, we group all the particles that have traveled through that sequence of detectors. The hit positions are stored in a 2D array where each row represents a different particle and each column represents a different detector.
 
-* As before, we keep the _weights_ that correspond to each hit. These are also now stored in a 2D array, where each row contains the weights for a different particle. Specifically, each row contains the weights for the particle hits, as the particle goes through the sequence of detectors.
+* The corresponding hit weights are also stored in a 2D array.
 
-Now, we are _not_ going to keep multiple particles for each sequence of detectors. Instead, our goal is to keep only the "mean trajectory" of the particles that have traveled across the same sequence of detectors.
+Now, we are _not_ going to keep multiple particles for each sequence of detectors. Instead, our goal is to keep only the "mean trajectory" of the particles that have traveled across the same route.
 
 For this purpose:
 
-* We calculate the _count_ of particles that have traveled across the same sequence of detectors.
+* We calculate the _count_ of particles that have traveled across each route.
 
-* We calculate the mean _position_ of the particle hits at each detector, along the sequence of detectors.
+* We calculate the mean _position_ of the particle hits at each detector, along each route.
 
-* We calculate the mean _weight_ of the particle hits at each detector, along the sequence of detectors.
+* We calculate the mean _weight_ of the particle hits at each detector, along each route.
 
-Such "mean trajectory" (defined by the mean position of particle hits at each detector along a sequence of detectors) is called a _route_.
+The end result - in the form of a list of route, count, positions and weights - is saved to a CSV file (`event*-particles.csv`).
 
-The results are sorted by _count_ in descending order, so that the routes that have been traveled by the largest number of particles are listed first.
-
-As a result of this first step, we will have a `routes.csv` file of about 23.5 GB.
+These results are sorted by _count_ in descending order, so that the routes that have been traveled by the largest number of particles will be considered first in the next step.
 
 ### What is `qsub_routes.py`?
 
 Nothing special. Only the command that runs `routes.py` as a single worker on a [PBS](https://www.pbspro.org/) cluster.
+
+As a result of this second step, we will have a `routes.csv` file of about 23.5 GB.
 
 ## The third step: _tracks_
 
