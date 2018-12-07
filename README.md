@@ -59,24 +59,7 @@ To identify candidate tracks, we follow the same process as described above, but
 
 <p align="center"><img src="https://raw.githubusercontent.com/diogoff/trackml-100/master/images/track.png" width="600"></p>
 
-
-
-
-
-
-
-
-We call each sequence of detectors a _route_. Several particles may follow the same route (i.e. the same sequence of detectors), so the number of routes is less than the number of particles.
-
-Now, in the figure above, we see that particles are scattered more or less radially (and helically) from the collision point. This means that only certain routes (i.e. the ones that comply with such physical behavior) are plausible.
-
-If the training dataset is sufficiently rich to provide us with all (or most of) the plausible routes, then it would be reasonable to expect that the test hits come from particles that also comply with those routes.
-
-For each route, we pick the test hits that best fit that route. Only test hits in the same sequence of detectors as the route are considered. We give a score to how good each route can be fitted by such test hits.
-
-After having computed the score for all routes, we sort routes by score, with the best score/route first.
-
-We then assign test hits to routes on a first-come, first-served basis. The first routes (which are the ones with best score) can pick the test hits that best suit them. The remaining routes will have to pick test hits from the leftovers.
+This means that only one candidate track will be considered for each unique sequence of detectors.
 
 ## The solution in 3 steps
 
