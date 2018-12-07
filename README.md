@@ -37,7 +37,7 @@ The main idea is to do the following:
 
 * Pick the test hits that are closest to the particle hits on each detector. Calculate the average distance between the particle hits and their closest test hits across detectors.
 
-* Repeat this process for every training particle, i.e. get the closest test hit on each detector that the particle passes through, and calculate the average distance between particle hits and their closest test hits across detectors.
+* Repeat this process for every training particle. Get the closest test hit on each detector that the particle passes through. Calculate the average distance between particle hits and their closest test hits across detectors.
 
 * For each training particle that is considered, there will a candidate track comprising the test hits that are closest to that particle. This candidate track is characterized by a certain average distance. 
 
@@ -54,6 +54,12 @@ In the picture below, we consider three detectors and four particles that pass t
 <p align="center"><img src="https://raw.githubusercontent.com/diogoff/trackml-100/master/images/route.png" width="600"></p>
 
 The route is calculated as the "mean trajectory" of these particles. At each detector, we calculate mean position of the particle hits. The route is defined by the sequence of such positions across detectors.
+
+
+
+<p align="center"><img src="https://raw.githubusercontent.com/diogoff/trackml-100/master/images/track.png" width="600"></p>
+
+
 
 
 
