@@ -1,6 +1,6 @@
 # TrackML 100<sup>th</sup> place
 
-This repository contains the solution ranked #100 in the private leaderboard of the [TrackML competition on Kaggle](https://www.kaggle.com/c/trackml-particle-identification).
+This repository contains the solution that ranked #100 in the private leaderboard of the [TrackML competition on Kaggle](https://www.kaggle.com/c/trackml-particle-identification).
 
 100<sup>th</sup> place?? Why should anyone care? Because this solution was identified as an "odd one" in [post-competition analysis](https://twitter.com/trackmllhc/status/1070339064094736390).
 
