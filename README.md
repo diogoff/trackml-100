@@ -159,7 +159,7 @@ Subsequently, we read `routes.csv` that was created in the previous step. We go 
 
 For each route being considered, we go through the detector sequence in order to pick the best hits, i.e. the test hits that are closest to the route position at each detector.
 
-We then calculate the weighted average distance between route those test hits and the route positions across detectors.
+We then calculate the weighted average distance between those test hits and the route positions across detectors.
 
 Some computational shortcuts when iterating through routes:
 
