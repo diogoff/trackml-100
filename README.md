@@ -41,7 +41,7 @@ For each training particle that is considered, there will a candidate track comp
 
 The best candidate tracks are the ones that have the smallest average distances.
 
-In the original dataset for the competition, every particle hit is associated with a certain _weight_. When computing the average distances above, use a weighted average that takes these weights into account.
+_Note:_ In the original dataset for the competition, every particle hit is associated with a certain _weight_. When computing the average distances above, use a weighted average that takes these weights into account.
 
 ### Is this computationally feasible?
 
