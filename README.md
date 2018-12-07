@@ -29,7 +29,7 @@ However, in this competition I attempted a more general approach. Regardless of 
 
 To better explain this idea, consider the following figure:
 
-<p align="center"><img src="https://raw.githubusercontent.com/diogoff/trackml-100/master/images/particle.png"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/diogoff/trackml-100/master/images/particle.png" width="500"></p>
 
 Apparently, the answer to this question is _yes_, but the results are not that good. This seems to indicate that the training set does not include all the tracks that may occur during a test experiment.
 
