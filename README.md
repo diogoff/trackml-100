@@ -61,7 +61,7 @@ To identify candidate tracks, we follow the same process as described above, but
 
 <p align="center"><img src="https://raw.githubusercontent.com/diogoff/trackml-100/master/images/track.png" width="600"></p>
 
-This means that only one candidate track will be considered for each unique sequence of detectors. However, different routes may have some detectors in common, so candidate tracks may compete for test hits on some detectors.
+This means that only one candidate track will be considered for each unique sequence of detectors. However, different routes may share some detectors, so candidate tracks may compete for test hits on those detectors.
 
 Better candidate tracks (i.e. the ones with smaller average distance) will be given priority in picking their test hits. Other candidate tracks (with larger average distances) will have to pick their test hits from the leftovers.
 
