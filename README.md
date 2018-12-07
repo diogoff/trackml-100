@@ -38,7 +38,7 @@ The main idea is to do the following:
 
 * The best candidate tracks are the ones with the smallest average distances.
 
-In the original dataset for the competition, every particle hit is associated with a certain _weight_. When computing the average distances above, use a weighted average that takes these weights into account.
+In the original dataset for the competition, every particle hit is associated with a certain _weight_. When computing the average distances, use a weighted average that takes these weights into account.
 
 ## Using routes instead of particles
 
