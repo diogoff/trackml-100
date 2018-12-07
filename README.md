@@ -23,9 +23,13 @@ Although there are many particles, the routes that these particles travel throug
 
 We could try to create a model that takes into account this particular experimental setup. We could even try to learn that model from the training data, and I guess many competitors have worked along these lines.
 
-However, in this competition I tried to use a more general approach. Regardless of the particular experimental setup, I tried to answer the following question:
+However, in this competition I attempted a more general approach. Regardless of the particular experimental setup, I tried to answer the following question:
 
 * *Given a large amount of training particles, is it possible to do track reconstruction from test hits by finding the training particles that best fit the test hits?*
+
+To better explain this idea, consider the following figure:
+
+<p align="center"><img src="https://raw.githubusercontent.com/diogoff/trackml-100/master/images/particle.png"></p>
 
 Apparently, the answer to this question is _yes_, but the results are not that good. This seems to indicate that the training set does not include all the tracks that may occur during a test experiment.
 
