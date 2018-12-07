@@ -27,11 +27,13 @@ However, in this competition I tried a more general approach. Regardless of the 
 
 * *Given a large amount of training particles, is it possible to do track reconstruction from test hits by finding the training particles that best fit the test hits?*
 
-In the picture below, there is a training particle that passes through three detectors. In each of these detectors, there are multiple test hits. Some test hits will be closer to the training particle than others. 
+To better explain this idea, consider the following picture:
 
 <p align="center"><img src="https://raw.githubusercontent.com/diogoff/trackml-100/master/images/particle.png" width="600"></p>
 
-The main idea is to do following:
+In the picture above, there is a training particle that passes through three detectors. In each of these detectors, there are multiple test hits. Some test hits will be closer to the training particle than others. 
+
+The main idea is to do the following:
 
 * Pick the test hits that are closest to the particle hits on each detector. Calculate the average distance between the particle hits and their closest test hits across detectors.
 
