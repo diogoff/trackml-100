@@ -16,9 +16,6 @@ So, let's have a look at the solution.
 
 The training set contains on the order of 10<sup>4</sup> events (event ids). Each event contains on the order of 10<sup>4</sup> particles (particle ids). Therefore, there are a total of about (10<sup>4</sup> events) * (10<sup>4</sup> particles per event) = 10<sup>8</sup> training particles.
 
-<p align="center"><img src="https://raw.githubusercontent.com/diogoff/trackml-100/master/images/trackml.png" width="450"></p>
-<p align="center">(Source: <a href="https://sites.google.com/site/trackmlparticle/">https://sites.google.com/site/trackmlparticle/</a>)</p>
-
 Although there are many particles, the routes that these particles travel through space are constrained by the experimental setup and the laws of physics. For example, since there is a magnetic field, charged particles will have helical trajectories.
 
 We could try to create a model that takes into account this particular experimental setup. We could even try to learn that model from the training data, and I guess many competitors have worked along these lines.
