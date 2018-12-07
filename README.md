@@ -1,6 +1,6 @@
 # TrackML 100<sup>th</sup> place
 
-This repository contains the solution that ranked #100 in the private leaderboard of the [TrackML competition on Kaggle](https://www.kaggle.com/c/trackml-particle-identification).
+This repository contains the solution ranked #100 in the private leaderboard of the [TrackML competition on Kaggle](https://www.kaggle.com/c/trackml-particle-identification).
 
 100<sup>th</sup> place?? Why should anyone care? Because this solution was identified as an "odd one" in [post-competition analysis](https://twitter.com/trackmllhc/status/1070339064094736390).
 
@@ -12,15 +12,11 @@ As [David Rousseau](https://www.kaggle.com/c/trackml-particle-identification/dis
 
 So, let's have a look at the solution.
 
-## Main idea
+## Introduction
 
-* The training set for this competition contains on the order of 10<sup>4</sup> events (event ids).
+The training set for this competition contains on the order of 10<sup>4</sup> events (event ids). Each event contains on the order of 10<sup>4</sup> particles (particle ids).
 
-* Each event contains on the order of 10<sup>4</sup> particles (particle ids).
-
-* And each particle contains on the order of 10 hits (hit ids).
-
-From the numbers above, we have a total of about (10<sup>4</sup> events) * (10<sup>4</sup> particles per event) = 10<sup>8</sup> training particles.
+Therefore, we have a total of about (10<sup>4</sup> events) * (10<sup>4</sup> particles per event) = 10<sup>8</sup> training particles.
 
 <p align="center"><img src="https://raw.githubusercontent.com/diogoff/trackml-100/master/images/trackml.png"></p>
 <p align="center">(Source: <a href="https://sites.google.com/site/trackmlparticle/">https://sites.google.com/site/trackmlparticle/</a>)</p>
