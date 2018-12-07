@@ -33,11 +33,13 @@ To better explain this idea, consider the following picture:
 
 In the picture above, there is a training particle that passes through three detectors. In each of these detectors, there are multiple test hits. Some test hits will be closer to the training particle than others. 
 
-Pick the test hits that are closest to the particle hits on each detector. Calculate the average distance between the particle hits and their closest test hits across the detectors.
+Pick the test hits that are closest to the particle hits on each detector. Calculate the average distance between the particle hits and their closest test hits across detectors.
 
 Repeat this process for every training particle. Get the closest test hit on each detector that the particle passes through. Calculate the average distance between particle hits and their closest test hits across detectors.
 
-From this process, there will be several candidate tracks, one for each training particle that has been considered. Each of these candidate tracks is associated with a certain average distance. The best candidate tracks are the ones that have the smallest average distances.
+For each training particle that is considered, there will a candidate track comprising the test hits that are closest to that particle. This candidate track is characterized by a certain average distance. 
+
+The best candidate tracks are the ones that have the smallest average distances.
 
 
 Apparently, the answer to this question is _yes_, but the results are not that good. This seems to indicate that the training set does not include all the tracks that may occur during a test experiment.
