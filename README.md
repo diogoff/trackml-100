@@ -41,14 +41,17 @@ For each training particle that is considered, there will a candidate track comp
 
 The best candidate tracks are the ones that have the smallest average distances.
 
+In the original dataset for the competition, every particle hit is associated with a certain _weight_. When computing the average distances above, use a weighted average that takes these weights into account.
 
-Apparently, the answer to this question is _yes_, but the results are not that good. This seems to indicate that the training set does not include all the tracks that may occur during a test experiment.
+### Is this computationally feasible?
 
-However, the problem of finding the training particles that best fit the test hits is an interesting computational problem by itself. I spent my whole time in the competition trying to come up with a feasible computational approach to this problem.
 
-_Disclaimer:_ I never intended to compete based on such naïve approach. This was just something that I planned to use as a baseline to compare with other approaches that I would subsequently develop. However, as it often happens in Kaggle, the first idea that comes to mind is the one you will end up with.
 
-### Could this ever be computationally feasible?
+
+
+
+
+
 
 Searching for the training particles that best fit the test hits leads to a combinatorial explosion if the number of training particles and the number of test hits are both large.
 
