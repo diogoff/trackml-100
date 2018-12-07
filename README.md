@@ -47,7 +47,7 @@ In the original dataset for the competition, every particle hit is associated wi
 
 ## Using routes instead of particles
 
-To reduce the computational burden, we group the particles that pass through exactly the same sequence of detectors. These particles are said to have the same _route_.
+To reduce the computational burden, we group the particles that go through exactly the same sequence of detectors. These particles are said to have the same _route_.
 
 In the picture below, we consider three detectors and four particles that pass through these (and only these) detectors in exactly the same sequence.
 
