@@ -31,7 +31,7 @@ To better explain this idea, consider the following picture:
 
 <p align="center"><img src="https://raw.githubusercontent.com/diogoff/trackml-100/master/images/particle.png" width="600"></p>
 
-In the picture above, there is a training particle that passes through three detectors. In these detectors, there are also a bunch of test hits. Some test hits will be closer to the training particle than others. 
+In the picture above, there is a training particle that passes through three detectors. In each of these detectors, there are several test hits. Some test hits will be closer to the training particle than others. 
 
 Pick the test hits that are closest to the particle hits on each detector. Calculate the average distance between the particle hits and their closest test hits across these detectors.
 
