@@ -134,7 +134,7 @@ The routes are sorted by _count_ in descending order, so that routes traveled by
 
 ### What is `qsub_routes.py`?
 
-Nothing special. Just the command that runs `routes.py` as a single worker on a [PBS](https://www.pbspro.org/) cluster.
+Nothing special. Just the command that runs `routes.py` as a single worker on a [PBS](https://www.pbspro.org/) cluster. Note, however, the memory requirement (500 GB of RAM).
 
 As a result of this second step, we will have a `routes.csv` file of about 23.5 GB.
 
