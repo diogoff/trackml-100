@@ -100,7 +100,7 @@ As a result of this step, we will have a `particles.csv` file of about 48.0 GB.
 
 ## The second step: _routes_
 
-The core of this step is `routes.py`. This script reads the output file from the previous step (`particles.csv`) into memory. (Yes, it reads 48 GB into RAM. I tried using [Dask](https://dask.org/) to avoid this, but at the time of this competition Dask did not support the aggregations that will be computed next.)
+The core of this step is `routes.py`. This script reads the output file from the previous step (`particles.csv`) into memory. (Yes, it reads 48 GB into RAM. I tried using [Dask](https://dask.org/) to avoid this, but at the time of this competition, Dask did not support the aggregations that will be computed next.)
 
 The x,y,z positions of each hit are brought together into a new column named _position_.
 
